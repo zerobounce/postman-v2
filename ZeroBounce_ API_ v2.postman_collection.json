@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "11993fc2-eac0-478a-8ee7-1db269225b7d",
+		"name": "ZeroBounce API v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Validate Emails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.zerobounce.net/v2/validate?api_key=replacewithyours&email=replacewithyours&ip_address=",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account."
+						},
+						{
+							"key": "email",
+							"value": "replacewithyours",
+							"description": "The email address you want to validate"
+						},
+						{
+							"key": "ip_address",
+							"value": "",
+							"description": "The IP Address the email signed up from (Can be blank, but parameter required)"
+						}
+					]
+				},
+				"description": "API for single email address validation."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Credit Balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.zerobounce.net/v2/getcredits?api_key=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"getcredits"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account."
+						}
+					]
+				},
+				"description": "This API will tell you how many credits you have left on your account."
+			},
+			"response": []
+		},
+		{
+			"name": "Send File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"description": "csv or txt file",
+							"type": "file",
+							"src": ""
+						},
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "return_url",
+							"value": "",
+							"description": "The URL will be used to call back when the validation is completed. (Optional)",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email_address_column",
+							"value": "replacewithyours",
+							"description": "The column index of the email address in your file. Index starts from 1. (Required, number)",
+							"type": "text"
+						},
+						{
+							"key": "first_name_column",
+							"value": "",
+							"description": "The column index of the first name column. (Optional, number)",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "last_name_column",
+							"value": "",
+							"description": "The column index of the last name column. (Optional, number)",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "gender_column",
+							"value": "",
+							"description": "The column index of the gender column. (Optional, number)",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ip_address_column",
+							"value": "",
+							"description": "The IP Address the email signed up from. (Optional, number)",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "has_header_row",
+							"value": "",
+							"description": "If the first row from the submitted file is a header row. (Optional, true/false)",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/v2/sendfile",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"sendfile"
+					]
+				},
+				"description": "This API allows user to send a file for bulk email validation."
+			},
+			"response": []
+		},
+		{
+			"name": "File Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/v2/filestatus?api_key=replacewithyours&file_id=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"filestatus"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account."
+						},
+						{
+							"key": "file_id",
+							"value": "replacewithyours",
+							"description": "The returned file ID when calling sendfile API."
+						}
+					]
+				},
+				"description": "The API returns the file processing status for the file been submitted using sendfile API."
+			},
+			"response": []
+		},
+		{
+			"name": "Get File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/v2/getfile?api_key=replacewithyours&file_id=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"getfile"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account."
+						},
+						{
+							"key": "file_id",
+							"value": "replacewithyours",
+							"description": "The returned file ID when calling sendfile API."
+						}
+					]
+				},
+				"description": "The API allows users to get the validation results file for the file been submitted using sendfile API."
+			},
+			"response": []
+		}
+	]
+}
