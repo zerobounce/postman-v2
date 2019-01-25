@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "11993fc2-eac0-478a-8ee7-1db269225b7d",
+		"_postman_id": "e0aa6288-c3d5-46a6-b150-a3e609f932e9",
 		"name": "ZeroBounce API v2",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
@@ -151,19 +151,7 @@
 						}
 					]
 				},
-				"url": {
-					"raw": "https://bulkapi.zerobounce.net/v2/sendfile",
-					"protocol": "https",
-					"host": [
-						"bulkapi",
-						"zerobounce",
-						"net"
-					],
-					"path": [
-						"v2",
-						"sendfile"
-					]
-				},
+				"url": "https://bulkapi.zerobounce.net/v2/sendfile",
 				"description": "This API allows user to send a file for bulk email validation."
 			},
 			"response": []
@@ -241,6 +229,44 @@
 					]
 				},
 				"description": "The API allows users to get the validation results file for the file been submitted using sendfile API."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/v2/deletefile?api_key=replacewithyours&file_id=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"deletefile"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account."
+						},
+						{
+							"key": "file_id",
+							"value": "replacewithyours",
+							"description": "The returned file ID when calling sendfile API."
+						}
+					]
+				},
+				"description": "The API returns the file processing status for the file been submitted using sendfile API."
 			},
 			"response": []
 		}
