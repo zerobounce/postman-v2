@@ -1,8 +1,10 @@
 {
 	"info": {
-		"_postman_id": "e0aa6288-c3d5-46a6-b150-a3e609f932e9",
+		"_postman_id": "3eff2d0d-018b-416a-8dc5-a422c3a7e50c",
 		"name": "ZeroBounce API v2",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22430436",
+		"_collection_link": "https://winter-satellite-594815.postman.co/workspace/ZeroBounce-Postman-Collection-v~2aafee13-1363-47a7-80fe-6ea117f7fca4/collection/22430436-3eff2d0d-018b-416a-8dc5-a422c3a7e50c?action=share&creator=22430436&source=collection_link"
 	},
 	"item": [
 		{
@@ -10,10 +12,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://api.zerobounce.net/v2/validate?api_key=replacewithyours&email=replacewithyours&ip_address=",
 					"protocol": "https",
@@ -53,10 +51,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://api.zerobounce.net/v2/getcredits?api_key=replacewithyours",
 					"protocol": "https",
@@ -82,7 +76,85 @@
 			"response": []
 		},
 		{
-			"name": "Send File",
+			"name": "Get API Usage ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "https://api.zerobounce.net/v2/getapiusage?api_key=replacewithyours&start_date=&end_date=",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"getapiusage"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account."
+						},
+						{
+							"key": "start_date",
+							"value": "",
+							"description": "The start date of when you want to view API usage. (format: yyyy-mm-dd)"
+						},
+						{
+							"key": "end_date",
+							"value": "",
+							"description": "The end date of when you want to view API usage. (format: yyyy-mm-dd)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Email Validator - Real time",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/v2/validatebatch?apy_key=replacewithyours&email_batch",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"validatebatch"
+					],
+					"query": [
+						{
+							"key": "apy_key",
+							"value": "replacewithyours",
+							"description": "Your API Key"
+						},
+						{
+							"key": "email_batch",
+							"value": null,
+							"description": "[Array of Objects], Format:{\"email_address\": \"valid@example.com\",\"ip_address\": \"1.1.1.1\"}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Email Validator - Send File",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -93,7 +165,7 @@
 							"key": "file",
 							"description": "csv or txt file",
 							"type": "file",
-							"src": ""
+							"src": []
 						},
 						{
 							"key": "api_key",
@@ -151,8 +223,64 @@
 						}
 					]
 				},
-				"url": "https://bulkapi.zerobounce.net/v2/sendfile",
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/v2/sendfile",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"sendfile"
+					]
+				},
 				"description": "This API allows user to send a file for bulk email validation."
+			},
+			"response": []
+		},
+		{
+			"name": "Add or Modify “allow” or “block” rule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.zerobounce.net/v2/filters/add?api_key=replacewithyours&rule&target&value",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"filters",
+						"add"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account. (Required)"
+						},
+						{
+							"key": "rule",
+							"value": null,
+							"description": "Choose which action the filter should take. Possible values: allow, block. (Required)"
+						},
+						{
+							"key": "target",
+							"value": null,
+							"description": "Choose for which target the filter is set for. Possible values: email, domain, or mx. (Required)"
+						},
+						{
+							"key": "value",
+							"value": null,
+							"description": "The email address, email domain, or mx record you wish to filter, based on the selected target. (Required)"
+						}
+					]
+				}
 			},
 			"response": []
 		},
@@ -161,10 +289,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://bulkapi.zerobounce.net/v2/filestatus?api_key=replacewithyours&file_id=replacewithyours",
 					"protocol": "https",
@@ -199,10 +323,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://bulkapi.zerobounce.net/v2/getfile?api_key=replacewithyours&file_id=replacewithyours",
 					"protocol": "https",
@@ -237,10 +357,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://bulkapi.zerobounce.net/v2/deletefile?api_key=replacewithyours&file_id=replacewithyours",
 					"protocol": "https",
@@ -267,6 +383,298 @@
 					]
 				},
 				"description": "The API returns the file processing status for the file been submitted using sendfile API."
+			},
+			"response": []
+		},
+		{
+			"name": "Email Finder API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.zerobounce.net/v2/guessformat?api_key=replacewithyours&domain&first_name&middle_name&last_name",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"guessformat"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account.\n"
+						},
+						{
+							"key": "domain",
+							"value": null,
+							"description": "The email domain for which to find the email format."
+						},
+						{
+							"key": "first_name",
+							"value": null,
+							"description": "The first name of the person whose email format is being searched. [optional]"
+						},
+						{
+							"key": "middle_name",
+							"value": null,
+							"description": "The middle name of the person whose email format is being searched. [optional]"
+						},
+						{
+							"key": "last_name",
+							"value": null,
+							"description": "The last name of the person whose email format is being searched. [optional]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AI Scoring API: Send File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"description": "The csv or txt file. Byte array contents for the submitted file. The content's header is type of \"text/csv\"",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account\n",
+							"type": "text"
+						},
+						{
+							"key": "email_address_column",
+							"value": "",
+							"description": "The column index of the email address in the file. Index starts at 1\n",
+							"type": "text"
+						},
+						{
+							"key": "return_url",
+							"value": "",
+							"description": "The URL will be used as a callback when the scoring service is completed",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "has_header_row",
+							"value": "",
+							"description": "If the first row from the submitted file is a header row. True or False",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "remove_duplicate",
+							"value": "",
+							"description": "If you want the system to remove duplicate emails (true or false, default is true). Please note that if we remove more than 50% of the lines because of duplicates (parameter is true), system will return a 400 bad request error as a safety net to let you know that more than 50% of the file has been modified.",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/v2/scoring/sendfile",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"scoring",
+						"sendfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AI Scoring API: File Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/v2/scoring/filestatus?api_key=replacewithyours&file_id=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"scoring",
+						"filestatus"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account"
+						},
+						{
+							"key": "file_id",
+							"value": "replacewithyours",
+							"description": "The returned file ID when calling scoring sendfile API"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AI Scoring API: Get File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/v2/scoring/getfile?api_key=replacewithyours&file_id=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"scoring",
+						"getfile"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account"
+						},
+						{
+							"key": "file_id",
+							"value": "replacewithyours",
+							"description": "The returned file ID when calling scoring sendfile API"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AI Scoring API: Delete File",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/v2/scoring/deletefile?api_key=replacewithyours&file_id=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"scoring",
+						"deletefile"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account"
+						},
+						{
+							"key": "file_id",
+							"value": "replacewithyours",
+							"description": "The returned file ID when calling scoring sendfile API"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activity Data API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.zerobounce.net/v2/activity?api_key=replacewithyours&email=email@email.com",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"activity"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours"
+						},
+						{
+							"key": "email",
+							"value": "email@email.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Evaluator API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"description": "csv or txt file. Byte array contents for the submitted file. The content's header is type of \"text/csv\". (Required)\n",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "email_address_column",
+							"value": "",
+							"description": "The column index of the email address in the file. Index starts from 1. (Required)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/v2/listevaluator/",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"listevaluator",
+						""
+					]
+				}
 			},
 			"response": []
 		}
