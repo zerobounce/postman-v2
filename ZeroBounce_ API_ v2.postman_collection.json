@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "3eff2d0d-018b-416a-8dc5-a422c3a7e50c",
+		"_postman_id": "08337f1e-9a6a-436a-9bf6-57fb3d4bf3b0",
 		"name": "ZeroBounce API v2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "22430436",
-		"_collection_link": "https://winter-satellite-594815.postman.co/workspace/ZeroBounce-Postman-Collection-v~2aafee13-1363-47a7-80fe-6ea117f7fca4/collection/22430436-3eff2d0d-018b-416a-8dc5-a422c3a7e50c?action=share&creator=22430436&source=collection_link"
+		"_collection_link": "https://winter-satellite-594815.postman.co/workspace/Updated~bb9e332a-d133-4533-a3c9-bb78da1caf30/collection/22430436-08337f1e-9a6a-436a-9bf6-57fb3d4bf3b0?action=share&creator=22430436&source=collection_link"
 	},
 	"item": [
 		{
@@ -121,7 +121,55 @@
 			"response": []
 		},
 		{
-			"name": "Batch Email Validator - Real time",
+			"name": "Email Finder API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.zerobounce.net/v2/guessformat?api_key=replacewithyours&domain&first_name&middle_name&last_name",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"guessformat"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account.\n"
+						},
+						{
+							"key": "domain",
+							"value": null,
+							"description": "The email domain for which to find the email format."
+						},
+						{
+							"key": "first_name",
+							"value": null,
+							"description": "The first name of the person whose email format is being searched. [optional]"
+						},
+						{
+							"key": "middle_name",
+							"value": null,
+							"description": "The middle name of the person whose email format is being searched. [optional]"
+						},
+						{
+							"key": "last_name",
+							"value": null,
+							"description": "The last name of the person whose email format is being searched. [optional]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Email Validator: Real time",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -154,7 +202,7 @@
 			"response": []
 		},
 		{
-			"name": "Batch Email Validator - Send File",
+			"name": "Bulk Email Validator: Send File",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -241,51 +289,7 @@
 			"response": []
 		},
 		{
-			"name": "Add or Modify “allow” or “block” rule",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "https://api.zerobounce.net/v2/filters/add?api_key=replacewithyours&rule&target&value",
-					"protocol": "https",
-					"host": [
-						"api",
-						"zerobounce",
-						"net"
-					],
-					"path": [
-						"v2",
-						"filters",
-						"add"
-					],
-					"query": [
-						{
-							"key": "api_key",
-							"value": "replacewithyours",
-							"description": "Your API Key, found in your account. (Required)"
-						},
-						{
-							"key": "rule",
-							"value": null,
-							"description": "Choose which action the filter should take. Possible values: allow, block. (Required)"
-						},
-						{
-							"key": "target",
-							"value": null,
-							"description": "Choose for which target the filter is set for. Possible values: email, domain, or mx. (Required)"
-						},
-						{
-							"key": "value",
-							"value": null,
-							"description": "The email address, email domain, or mx record you wish to filter, based on the selected target. (Required)"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "File Status",
+			"name": "Bulk Email Validator: File Status",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -319,7 +323,7 @@
 			"response": []
 		},
 		{
-			"name": "Get File",
+			"name": "Bulk Email Validator: Get File",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -353,7 +357,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete File",
+			"name": "Bulk Email validator: Delete File",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -383,54 +387,6 @@
 					]
 				},
 				"description": "The API returns the file processing status for the file been submitted using sendfile API."
-			},
-			"response": []
-		},
-		{
-			"name": "Email Finder API",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://api.zerobounce.net/v2/guessformat?api_key=replacewithyours&domain&first_name&middle_name&last_name",
-					"protocol": "https",
-					"host": [
-						"api",
-						"zerobounce",
-						"net"
-					],
-					"path": [
-						"v2",
-						"guessformat"
-					],
-					"query": [
-						{
-							"key": "api_key",
-							"value": "replacewithyours",
-							"description": "Your API Key, found in your account.\n"
-						},
-						{
-							"key": "domain",
-							"value": null,
-							"description": "The email domain for which to find the email format."
-						},
-						{
-							"key": "first_name",
-							"value": null,
-							"description": "The first name of the person whose email format is being searched. [optional]"
-						},
-						{
-							"key": "middle_name",
-							"value": null,
-							"description": "The middle name of the person whose email format is being searched. [optional]"
-						},
-						{
-							"key": "last_name",
-							"value": null,
-							"description": "The last name of the person whose email format is being searched. [optional]"
-						}
-					]
-				}
 			},
 			"response": []
 		},
@@ -673,6 +629,50 @@
 						"v2",
 						"listevaluator",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add or Modify “allow” or “block” rule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.zerobounce.net/v2/filters/add?api_key=replacewithyours&rule&target&value",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"filters",
+						"add"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account. (Required)"
+						},
+						{
+							"key": "rule",
+							"value": null,
+							"description": "Choose which action the filter should take. Possible values: allow, block. (Required)"
+						},
+						{
+							"key": "target",
+							"value": null,
+							"description": "Choose for which target the filter is set for. Possible values: email, domain, or mx. (Required)"
+						},
+						{
+							"key": "value",
+							"value": null,
+							"description": "The email address, email domain, or mx record you wish to filter, based on the selected target. (Required)"
+						}
 					]
 				}
 			},
