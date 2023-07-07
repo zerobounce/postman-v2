@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "08337f1e-9a6a-436a-9bf6-57fb3d4bf3b0",
+		"_postman_id": "a4e2798c-6f7d-4944-a8a0-5e1bea367b3c",
 		"name": "ZeroBounce API v2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "22430436",
-		"_collection_link": "https://winter-satellite-594815.postman.co/workspace/Updated~bb9e332a-d133-4533-a3c9-bb78da1caf30/collection/22430436-08337f1e-9a6a-436a-9bf6-57fb3d4bf3b0?action=share&creator=22430436&source=collection_link"
+		"_collection_link": "https://winter-satellite-594815.postman.co/workspace/klkk%255D~918d17a6-d510-4a47-8fa8-fbc820cf8472/collection/22430436-a4e2798c-6f7d-4944-a8a0-5e1bea367b3c?action=share&creator=22430436&source=collection_link"
 	},
 	"item": [
 		{
@@ -639,8 +639,37 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "rule",
+							"value": "allow or block",
+							"description": "Choose which action the filter should take. Possible values: allow, block. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "target",
+							"value": "domain,mx record or email",
+							"description": "Choose for which target the filter is set for. Possible values: email, domain, or mx. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "value",
+							"value": "",
+							"description": "The email address, email domain, or mx record you wish to filter, based on the selected target. (Required)",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
-					"raw": "https://api.zerobounce.net/v2/filters/add?api_key=replacewithyours&rule&target&value",
+					"raw": "https://api.zerobounce.net/v2/filters/add",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -651,6 +680,77 @@
 						"v2",
 						"filters",
 						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a custom \"allow\" or \"block\" rule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "rule",
+							"value": "allow or block",
+							"description": "Choose which action the filter should take. Possible values: allow, block. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "target",
+							"value": "domain,mx record or email",
+							"description": "Choose for which target the filter is set for. Possible values: email, domain, or mx. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "value",
+							"value": "",
+							"description": "The email address, email domain, or mx record you wish to filter, based on the selected target. (Required)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.zerobounce.net/v2/filters/delete",
+					"protocol": "https",
+					"host": [
+						"api",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"v2",
+						"filters",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Amazon S3 Files",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/listS3files?api_key=replacewithyours&bucket=replacewithyours",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"listS3files"
 					],
 					"query": [
 						{
@@ -659,20 +759,178 @@
 							"description": "Your API Key, found in your account. (Required)"
 						},
 						{
-							"key": "rule",
-							"value": null,
-							"description": "Choose which action the filter should take. Possible values: allow, block. (Required)"
+							"key": "bucket",
+							"value": "replacewithyours",
+							"description": "Your Input Bucket; in case it’s not provided here, we’ll use the one you provided in the UI Settings. (Optional)"
 						},
 						{
-							"key": "target",
-							"value": null,
-							"description": "Choose for which target the filter is set for. Possible values: email, domain, or mx. (Required)"
-						},
-						{
-							"key": "value",
-							"value": null,
-							"description": "The email address, email domain, or mx record you wish to filter, based on the selected target. (Required)"
+							"key": "search",
+							"value": "",
+							"description": "Used to filter the result by the name of the files. (Optional)",
+							"disabled": true
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Amazon S3 File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "file_name",
+							"value": "replacewithyours",
+							"description": "The full path of the file from your Amazon S3 Bucket, as provided by the /listS3files. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "has_header_row",
+							"value": "True or False",
+							"description": "True if the first row of your submitted file is a header row, else false. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "remove_duplicates",
+							"value": "True or False",
+							"description": "True if you want the system to remove duplicate emails, else false (defaults to true). Please note that if we remove more than 50% of the lines because of duplicates (parameter is true), the system will return a 400 bad request error as a safety net to let you know that more than 50% of the file has been modified. (Optional)",
+							"type": "text"
+						},
+						{
+							"key": "return_url",
+							"value": "",
+							"description": "The URL will be used to call back when the validation is completed. (Optional)",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/validateS3file",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"validateS3file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Score Amazon S3 File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "file_name",
+							"value": "replacewithyours",
+							"description": "The full path of the file from your Amazon S3 Bucket, as provided by the /listS3files. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "has_header_row",
+							"value": "True or False",
+							"description": "True if the first row of your submitted file is a header row, else false. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "remove_duplicates",
+							"value": "True or False",
+							"description": "True if you want the system to remove duplicate emails, else false (defaults to true). Please note that if we remove more than 50% of the lines because of duplicates (parameter is true), the system will return a 400 bad request error as a safety net to let you know that more than 50% of the file has been modified. (Optional)",
+							"type": "text"
+						},
+						{
+							"key": "return_url",
+							"value": "",
+							"description": "The URL will be used to call back when the validation is completed. (Optional)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/scoreS3file",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"scoreS3file"
+					],
+					"query": [
+						{
+							"key": "return_url",
+							"value": null,
+							"description": "The URL will be used to call back when the validation is completed. (Optional)",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export Amazon S3 File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_key",
+							"value": "replacewithyours",
+							"description": "Your API Key, found in your account. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "file_id",
+							"value": "replacewithyours",
+							"description": "The ID of the validated/scored file. (Required)",
+							"type": "text"
+						},
+						{
+							"key": "export_bucket",
+							"value": "replacewithyours",
+							"description": "Your Export Bucket; in case it’s not provided here, we’ll use the one you provided in the UI Settings. (Optional)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://bulkapi.zerobounce.net/exportS3file",
+					"protocol": "https",
+					"host": [
+						"bulkapi",
+						"zerobounce",
+						"net"
+					],
+					"path": [
+						"exportS3file"
 					]
 				}
 			},
