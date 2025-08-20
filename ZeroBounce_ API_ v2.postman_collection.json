@@ -174,7 +174,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "https://bulkapi.zerobounce.net/v2/validatebatch?apy_key=replacewithyours&email_batch",
+					"raw": "https://bulkapi.zerobounce.net/v2/validatebatch?api_key=replacewithyours&email_batch",
 					"protocol": "https",
 					"host": [
 						"bulkapi",
@@ -187,7 +187,7 @@
 					],
 					"query": [
 						{
-							"key": "apy_key",
+							"key": "api_key",
 							"value": "replacewithyours",
 							"description": "Your API Key"
 						},
