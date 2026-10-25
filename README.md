@@ -14,12 +14,30 @@ To get started you will need an account on https://www.zerobounce.net/ to access
 The collection uses Postman variables, so you no longer edit every request. After importing,
 open the collection, go to **Variables**, and fill in:
 
-| Variable | Used by | Where to get it |
+| Variable | Used by | Notes |
 |---|---|---|
+| `base_url` | The 10 main-host requests | Switch region here. Pre-filled with the default host. |
 | `api_key` | Everything except Warmup | Your ZeroBounce account |
 | `warmup_api_key` | The **Warmup** folder only | Warmup is team-scoped and issued separately |
 
 Leave `warmup_api_key` empty if you do not use the Warmup API.
+
+## Regions
+
+Set `base_url` to the region you were assigned:
+
+| Region | `base_url` |
+|---|---|
+| Default | `https://api.zerobounce.net/v2` |
+| USA | `https://api-us.zerobounce.net/v2` |
+| EU | `https://api-eu.zerobounce.net/v2` |
+
+All three serve the same account — the same key and the same credit balance work on each.
+
+**Only the main API host is regional.** The bulk, Inbox Placement and Warmup hosts have no
+`-us` or `-eu` variants, so the other 64 requests always use their single host. Those are
+left as literal URLs rather than variables, so nothing implies a region switch that does
+not exist.
 
 ## What is in the collection
 

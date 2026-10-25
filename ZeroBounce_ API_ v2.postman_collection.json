@@ -16,22 +16,18 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://api.zerobounce.net/v2/getcredits?api_key={{api_key}}",
-              "protocol": "https",
+              "raw": "{{base_url}}/getcredits?api_key={{api_key}}",
               "host": [
-                "api",
-                "zerobounce",
-                "net"
+                "{{base_url}}"
               ],
               "path": [
-                "v2",
                 "getcredits"
               ],
               "query": [
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account."
+                  "description": "Your API Key, found in your account."
                 }
               ]
             },
@@ -52,22 +48,18 @@
               "formdata": []
             },
             "url": {
-              "raw": "https://api.zerobounce.net/v2/getapiusage?api_key={{api_key}}&start_date=&end_date=",
-              "protocol": "https",
+              "raw": "{{base_url}}/getapiusage?api_key={{api_key}}&start_date=&end_date=",
               "host": [
-                "api",
-                "zerobounce",
-                "net"
+                "{{base_url}}"
               ],
               "path": [
-                "v2",
                 "getapiusage"
               ],
               "query": [
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account."
+                  "description": "Your API Key, found in your account."
                 },
                 {
                   "key": "start_date",
@@ -96,26 +88,22 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://api.zerobounce.net/v2/validate?api_key={{api_key}}&email={{api_key}}",
-              "protocol": "https",
+              "raw": "{{base_url}}/validate?api_key={{api_key}}&email=replacewithyours",
               "host": [
-                "api",
-                "zerobounce",
-                "net"
+                "{{base_url}}"
               ],
               "path": [
-                "v2",
                 "validate"
               ],
               "query": [
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account."
+                  "description": "Your API Key, found in your account."
                 },
                 {
                   "key": "email",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "The email address you want to validate"
                 },
                 {
@@ -172,15 +160,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://api.zerobounce.net/v2/scoring?api_key={{api_key}}&email",
-              "protocol": "https",
+              "raw": "{{base_url}}/scoring?api_key={{api_key}}&email=",
               "host": [
-                "api",
-                "zerobounce",
-                "net"
+                "{{base_url}}"
               ],
               "path": [
-                "v2",
                 "scoring"
               ],
               "query": [
@@ -203,15 +187,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://api.zerobounce.net/v2/activity?api_key={{api_key}}&email=email@email.com",
-              "protocol": "https",
+              "raw": "{{base_url}}/activity?api_key={{api_key}}&email=email@email.com",
               "host": [
-                "api",
-                "zerobounce",
-                "net"
+                "{{base_url}}"
               ],
               "path": [
-                "v2",
                 "activity"
               ],
               "query": [
@@ -234,22 +214,18 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://api.zerobounce.net/v2/guessformat?api_key={{api_key}}&domain&first_name&middle_name&last_name",
-              "protocol": "https",
+              "raw": "{{base_url}}/guessformat?api_key={{api_key}}&domain=&first_name=&middle_name=&last_name=",
               "host": [
-                "api",
-                "zerobounce",
-                "net"
+                "{{base_url}}"
               ],
               "path": [
-                "v2",
                 "guessformat"
               ],
               "query": [
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account.\n"
+                  "description": "Your API Key, found in your account.\n"
                 },
                 {
                   "key": "domain",
@@ -297,15 +273,11 @@
               }
             },
             "url": {
-              "raw": "https://api.zerobounce.net/v2/validatebatch",
-              "protocol": "https",
+              "raw": "{{base_url}}/validatebatch",
               "host": [
-                "api",
-                "zerobounce",
-                "net"
+                "{{base_url}}"
               ],
               "path": [
-                "v2",
                 "validatebatch"
               ]
             }
@@ -335,7 +307,7 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account. (Required)",
+                  "description": "Your API Key, found in your account. (Required)",
                   "type": "text"
                 },
                 {
@@ -347,7 +319,7 @@
                 },
                 {
                   "key": "email_address_column",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "The column index of the email address in your file. Index starts from 1. (Required, number)",
                   "type": "text"
                 },
@@ -418,7 +390,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/v2/filestatus?api_key={{api_key}}&file_id={{api_key}}",
+              "raw": "https://bulkapi.zerobounce.net/v2/filestatus?api_key={{api_key}}&file_id=replacewithyours",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -433,11 +405,11 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account."
+                  "description": "Your API Key, found in your account."
                 },
                 {
                   "key": "file_id",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "The returned file ID when calling sendfile API."
                 }
               ]
@@ -452,7 +424,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/v2/getfile?api_key={{api_key}}&file_id={{api_key}}",
+              "raw": "https://bulkapi.zerobounce.net/v2/getfile?api_key={{api_key}}&file_id=replacewithyours",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -467,11 +439,11 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account."
+                  "description": "Your API Key, found in your account."
                 },
                 {
                   "key": "file_id",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "The returned file ID when calling sendfile API."
                 },
                 {
@@ -492,7 +464,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/v2/deletefile?api_key={{api_key}}&file_id={{api_key}}",
+              "raw": "https://bulkapi.zerobounce.net/v2/deletefile?api_key={{api_key}}&file_id=replacewithyours",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -507,11 +479,11 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account."
+                  "description": "Your API Key, found in your account."
                 },
                 {
                   "key": "file_id",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "The returned file ID when calling sendfile API."
                 }
               ]
@@ -543,7 +515,7 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account\n",
+                  "description": "Your API Key, found in your account\n",
                   "type": "text"
                 },
                 {
@@ -598,7 +570,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/v2/scoring/filestatus?api_key={{api_key}}&file_id={{api_key}}",
+              "raw": "https://bulkapi.zerobounce.net/v2/scoring/filestatus?api_key={{api_key}}&file_id=replacewithyours",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -614,11 +586,11 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account"
+                  "description": "Your API Key, found in your account"
                 },
                 {
                   "key": "file_id",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "The returned file ID when calling scoring sendfile API"
                 }
               ]
@@ -632,7 +604,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/v2/scoring/getfile?api_key={{api_key}}&file_id={{api_key}}",
+              "raw": "https://bulkapi.zerobounce.net/v2/scoring/getfile?api_key={{api_key}}&file_id=replacewithyours",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -648,11 +620,11 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account"
+                  "description": "Your API Key, found in your account"
                 },
                 {
                   "key": "file_id",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "The returned file ID when calling scoring sendfile API"
                 }
               ]
@@ -666,7 +638,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/v2/scoring/deletefile?api_key={{api_key}}&file_id={{api_key}}",
+              "raw": "https://bulkapi.zerobounce.net/v2/scoring/deletefile?api_key={{api_key}}&file_id=replacewithyours",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -682,11 +654,11 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account"
+                  "description": "Your API Key, found in your account"
                 },
                 {
                   "key": "file_id",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "The returned file ID when calling scoring sendfile API"
                 }
               ]
@@ -782,7 +754,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/email-finder/filestatus?api_key={{api_key}}&file_id",
+              "raw": "https://bulkapi.zerobounce.net/email-finder/filestatus?api_key={{api_key}}&file_id=",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -814,7 +786,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/email-finder/getfile?api_key={{api_key}}&file_id",
+              "raw": "https://bulkapi.zerobounce.net/email-finder/getfile?api_key={{api_key}}&file_id=",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -847,7 +819,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/email-finder/deletefile?api_key={{api_key}}&file_id",
+              "raw": "https://bulkapi.zerobounce.net/email-finder/deletefile?api_key={{api_key}}&file_id=",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -935,7 +907,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/domain-search/filestatus?api_key&file_id",
+              "raw": "https://bulkapi.zerobounce.net/domain-search/filestatus?api_key=&file_id=",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -967,7 +939,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/domain-search/getfile?api_key&file_id",
+              "raw": "https://bulkapi.zerobounce.net/domain-search/getfile?api_key=&file_id=",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -999,7 +971,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/domain-search/deletefile?api_key&file_id&",
+              "raw": "https://bulkapi.zerobounce.net/domain-search/deletefile?api_key=&file_id=&None=",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -1052,7 +1024,7 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account. (Required)",
+                  "description": "Your API Key, found in your account. (Required)",
                   "type": "text"
                 },
                 {
@@ -1086,7 +1058,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/v2/listevaluator/<file_id>/?api_key={{api_key}}&",
+              "raw": "https://bulkapi.zerobounce.net/v2/listevaluator/<file_id>/?api_key={{api_key}}&None=",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -1193,15 +1165,11 @@
               ]
             },
             "url": {
-              "raw": "https://api.zerobounce.net/v2/filters/add",
-              "protocol": "https",
+              "raw": "{{base_url}}/filters/add",
               "host": [
-                "api",
-                "zerobounce",
-                "net"
+                "{{base_url}}"
               ],
               "path": [
-                "v2",
                 "filters",
                 "add"
               ]
@@ -1244,15 +1212,11 @@
               ]
             },
             "url": {
-              "raw": "https://api.zerobounce.net/v2/filters/delete",
-              "protocol": "https",
+              "raw": "{{base_url}}/filters/delete",
               "host": [
-                "api",
-                "zerobounce",
-                "net"
+                "{{base_url}}"
               ],
               "path": [
-                "v2",
                 "filters",
                 "delete"
               ]
@@ -1266,15 +1230,11 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://api.zerobounce.net/v2/filters/list?api_key={{api_key}}",
-              "protocol": "https",
+              "raw": "{{base_url}}/filters/list?api_key={{api_key}}",
               "host": [
-                "api",
-                "zerobounce",
-                "net"
+                "{{base_url}}"
               ],
               "path": [
-                "v2",
                 "filters",
                 "list"
               ],
@@ -1302,7 +1262,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://bulkapi.zerobounce.net/listS3files?api_key={{api_key}}&bucket={{api_key}}",
+              "raw": "https://bulkapi.zerobounce.net/listS3files?api_key={{api_key}}&bucket=replacewithyours",
               "protocol": "https",
               "host": [
                 "bulkapi",
@@ -1316,11 +1276,11 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account. (Required)"
+                  "description": "Your API Key, found in your account. (Required)"
                 },
                 {
                   "key": "bucket",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "Your Input Bucket; in case it\u2019s not provided here, we\u2019ll use the one you provided in the UI Settings. (Optional)"
                 },
                 {
@@ -1345,12 +1305,12 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account. (Required)",
+                  "description": "Your API Key, found in your account. (Required)",
                   "type": "text"
                 },
                 {
                   "key": "file_name",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "The full path of the file from your Amazon S3 Bucket, as provided by the /listS3files. (Required)",
                   "type": "text"
                 },
@@ -1401,12 +1361,12 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account. (Required)",
+                  "description": "Your API Key, found in your account. (Required)",
                   "type": "text"
                 },
                 {
                   "key": "file_name",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "The full path of the file from your Amazon S3 Bucket, as provided by the /listS3files. (Required)",
                   "type": "text"
                 },
@@ -1464,18 +1424,18 @@
                 {
                   "key": "api_key",
                   "value": "{{api_key}}",
-                  "description": "{{api_key}}, found in your account. (Required)",
+                  "description": "Your API Key, found in your account. (Required)",
                   "type": "text"
                 },
                 {
                   "key": "file_id",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "The ID of the validated/scored file. (Required)",
                   "type": "text"
                 },
                 {
                   "key": "export_bucket",
-                  "value": "{{api_key}}",
+                  "value": "replacewithyours",
                   "description": "Your Export Bucket; in case it\u2019s not provided here, we\u2019ll use the one you provided in the UI Settings. (Optional)",
                   "type": "text"
                 }
@@ -3056,6 +3016,12 @@
     }
   ],
   "variable": [
+    {
+      "key": "base_url",
+      "value": "https://api.zerobounce.net/v2",
+      "type": "string",
+      "description": "Main API host. Switch region here: https://api-us.zerobounce.net/v2 (USA) or https://api-eu.zerobounce.net/v2 (EU). The bulk, Inbox Placement and Warmup hosts have no regional variants."
+    },
     {
       "key": "api_key",
       "value": "",
