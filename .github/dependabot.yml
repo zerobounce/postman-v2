@@ -1,0 +1,25 @@
+# Dependabot: security updates only (no version-update PRs).
+# Grouped security PRs open weekly on Tuesday morning (Europe/Bucharest).
+# https://docs.github.com/en/code-security/dependabot/dependabot-security-updates
+#
+# Only the github-actions ecosystem is listed: there is no package manifest here
+# for Dependabot to read.
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: tuesday
+      time: "06:00"
+      timezone: Europe/Bucharest
+    open-pull-requests-limit: 0
+    labels:
+      - "dependabot-security"
+      - "github dependencies"
+    groups:
+      github-actions-security:
+        applies-to: security-updates
+        patterns:
+          - "*"

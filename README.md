@@ -79,3 +79,7 @@ The API is not uniform here, and the collection reflects what each endpoint actu
 - `warmup-api.zerobounce.net/api/v1/warmup` — Warmup
 
 Full API documentation: https://www.zerobounce.net/docs/
+
+## License
+
+MIT. See [LICENSE](LICENSE).

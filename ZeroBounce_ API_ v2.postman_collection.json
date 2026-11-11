@@ -867,7 +867,7 @@
                 },
                 {
                   "key": "api_key",
-                  "value": "",
+                  "value": "{{api_key}}",
                   "type": "text"
                 },
                 {
@@ -1102,7 +1102,7 @@
                 },
                 {
                   "key": "api_key",
-                  "value": "",
+                  "value": "{{api_key}}",
                   "type": "text"
                 }
               ]
