@@ -1,0 +1,6 @@
+# Local secrets and exports with real keys
+.env
+*.postman_environment.json
+
+# macOS
+.DS_Store
