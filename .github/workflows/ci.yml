@@ -17,4 +17,6 @@ jobs:
         with:
           persist-credentials: false
       - name: Check the collection
-        run: python3 .github/scripts/check_collection.py
+        run: |
+          python3 .github/scripts/check_collection.py
+          python3 tests/test_check_collection.py

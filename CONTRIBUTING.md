@@ -8,10 +8,11 @@ By participating in this project, you agree to uphold our [Code of Conduct](CODE
 
 ## Getting Started
 
-See the [README](README.md) for importing the collection and setting its variables. CI checks that the collection is valid JSON in the Postman v2.1 format, that no request sends a hard-coded key, and that the key variables are empty.
+See the [README](README.md) for importing the collection and setting its variables. CI checks that the collection is valid JSON in the Postman v2.1 format, that no request sends a hard-coded key, that redirects are off, and that the key variables are empty.
 
 ```bash
 python3 .github/scripts/check_collection.py
+python3 tests/test_check_collection.py
 ```
 
 ## How to Contribute

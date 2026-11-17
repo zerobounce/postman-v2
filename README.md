@@ -72,9 +72,9 @@ The API is not uniform here, and the collection reflects what each endpoint actu
 
 ## Hosts
 
-- `api.zerobounce.net/v2` — single email, batch validation, filters
+- `api.zerobounce.net/v2` — account, single email, batch validation, filters
 - `bulkapi.zerobounce.net/v2` — bulk file jobs, list evaluator
-- `bulkapi.zerobounce.net` (no `/v2`) — S3 and SFTP jobs
+- `bulkapi.zerobounce.net` (no `/v2`) — bulk email finder, bulk domain search, S3, and SFTP
 - `bulkapi.zerobounce.net/api/ipt` — Inbox Placement Tester
 - `warmup-api.zerobounce.net/api/v1/warmup` — Warmup
 

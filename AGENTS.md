@@ -16,6 +16,7 @@ The Postman collection for the ZeroBounce API v2: 74 requests across the validat
 
 ```bash
 python3 .github/scripts/check_collection.py
+python3 tests/test_check_collection.py
 ```
 
 ## Conventions
@@ -23,3 +24,12 @@ python3 .github/scripts/check_collection.py
 - **Never commit a key.** `api_key` and `warmup_api_key` stay empty in the file. CI fails if either has a value, or if a request carries a literal `api_key`.
 - **Only the main API host is regional.** Requests to it use `{{base_url}}`; the bulk, Inbox Placement and Warmup hosts have no regional variants and stay literal URLs.
 - **The Warmup folder uses `warmup_api_key`**, sent in an `API-Key` header. Every other request uses `api_key`.
+- **Requests do not follow redirects.** Each request sets `followRedirects` to false, so a 307 or 308 cannot resend the key.
+
+## Changelog
+
+There is no `CHANGELOG.md`. This repository is not a published package, so there is no version history to keep.
+
+## Releasing
+
+There is no registry and no version to tag. Users import the collection from `master`. Do not tag or publish unless a maintainer asks.
